@@ -76,14 +76,14 @@ export function postQuiz({
         true_answer_text,
         false_answer_text,
       })
-      .then((response) => {
+      .then((res) => {
         dispatch(
-          setMessage(`Nice: "${response.data.question} is a great question! "`)
+          setMessage(`Congrats: "${res.data.question}" is a great question!`)
         );
         dispatch(resetForm());
       })
       .catch((err) => {
-        console.error(err);
+        console.log(err);
       });
     // On successful POST:
     // - Dispatch the correct message to the the appropriate state
